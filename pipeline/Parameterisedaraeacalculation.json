@@ -1,0 +1,93 @@
+{
+	"name": "Parameterisedaraeacalculation",
+	"properties": {
+		"activities": [
+			{
+				"name": "length",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "length",
+					"value": {
+						"value": "@pipeline().parameters.length",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "breadth",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "breadth",
+					"value": {
+						"value": "@pipeline().parameters.breadth",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Area",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "length",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "breadth",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Area",
+					"value": {
+						"value": "@mul(pipeline().parameters.length,pipeline().parameters.breadth)",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"length": {
+				"type": "int"
+			},
+			"breadth": {
+				"type": "int"
+			}
+		},
+		"variables": {
+			"length": {
+				"type": "Integer"
+			},
+			"breadth": {
+				"type": "Integer"
+			},
+			"Area": {
+				"type": "Integer"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-08-03T06:42:12Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

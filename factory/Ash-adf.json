@@ -1,0 +1,9 @@
+{
+	"name": "Ash-adf",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2e632f6a-f2f5-4b66-9e4c-170df9e385d4",
+		"tenantId": "d1a0c35b-dbdc-4ae3-bf3f-10a3099aa3e6"
+	}
+}

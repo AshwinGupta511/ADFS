@@ -1,0 +1,17 @@
+{
+	"name": "Incrementa_SQL_SINK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azuresqlserver",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "jul24e",
+			"table": "stg_Products"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

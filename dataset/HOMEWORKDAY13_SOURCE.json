@@ -1,0 +1,13 @@
+{
+	"name": "HOMEWORKDAY13_SOURCE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azuresqlserver",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

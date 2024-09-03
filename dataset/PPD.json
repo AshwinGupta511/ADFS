@@ -1,0 +1,32 @@
+{
+	"name": "PPD",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage_rg_1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"PPD_PARA_DA": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().PPD_PARA_DA",
+					"type": "Expression"
+				},
+				"container": "ashwincontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

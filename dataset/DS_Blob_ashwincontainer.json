@@ -1,0 +1,100 @@
+{
+	"name": "DS_Blob_ashwincontainer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage_rg_1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema": {
+				"type": "string"
+			},
+			"tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat(dataset().schema,'.',dataset().tablename,'1','.csv')",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat(substring(utcnow(),0,4),'/',substring(utcnow(), 5, 2),'/',substring(utcnow(), 8, 2))",
+					"type": "Expression"
+				},
+				"container": "ashwincontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "User_ID",
+				"type": "String"
+			},
+			{
+				"name": "Cust_name",
+				"type": "String"
+			},
+			{
+				"name": "Product_ID",
+				"type": "String"
+			},
+			{
+				"name": "Gender",
+				"type": "String"
+			},
+			{
+				"name": "Age Group",
+				"type": "String"
+			},
+			{
+				"name": "Age",
+				"type": "String"
+			},
+			{
+				"name": "Marital_Status",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Zone",
+				"type": "String"
+			},
+			{
+				"name": "Occupation",
+				"type": "String"
+			},
+			{
+				"name": "Product_Category",
+				"type": "String"
+			},
+			{
+				"name": "Orders",
+				"type": "String"
+			},
+			{
+				"name": "Amount",
+				"type": "String"
+			},
+			{
+				"name": "Status",
+				"type": "String"
+			},
+			{
+				"name": "unnamed1",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
